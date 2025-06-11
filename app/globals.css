@@ -1,0 +1,820 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enhanced Typography - Premium Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@200;300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 249, 250, 251;
+  --background-end-rgb: 255, 255, 255;
+  
+  /* Enhanced Red-Black Gradient Variables */
+  --icon-gradient-primary: linear-gradient(135deg, #DC2626 0%, #7F1D1D 25%, #1F2937 50%, #111827 75%, #000000 100%);
+  --icon-gradient-secondary: linear-gradient(120deg, #EF4444 0%, #991B1B 30%, #374151 60%, #000000 100%);
+  --icon-gradient-accent: linear-gradient(45deg, #F87171 0%, #DC2626 25%, #450A0A 75%, #000000 100%);
+  
+  /* Text gradients for elegant styling */
+  --text-gradient-elegant: linear-gradient(135deg, #1F2937 0%, #374151 50%, #6B7280 100%);
+  --text-gradient-accent: linear-gradient(135deg, #DC2626 0%, #7F1D1D 50%, #1F2937 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 17, 24, 39;
+    --background-end-rgb: 0, 0, 0;
+    
+    /* Dark mode icon gradients */
+    --icon-gradient-primary: linear-gradient(135deg, #EF4444 0%, #DC2626 25%, #4B5563 50%, #374151 75%, #1F2937 100%);
+    --icon-gradient-secondary: linear-gradient(120deg, #F87171 0%, #EF4444 30%, #6B7280 60%, #374151 100%);
+    --icon-gradient-accent: linear-gradient(45deg, #FCA5A5 0%, #EF4444 25%, #7F1D1D 75%, #1F2937 100%);
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+  
+  /* Enhanced Typography Classes */
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', Monaco, 'Cascadia Code', monospace;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  
+  /* Enhanced Text Styles */
+  .text-elegant {
+    background: var(--text-gradient-elegant);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 600;
+  }
+  
+  .text-accent-gradient {
+    background: var(--text-gradient-accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 700;
+  }
+  
+  /* Academic Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  
+  h1 {
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+  
+  h2 {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+  
+  /* Enhanced body text */
+  p {
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: -0.005em;
+  }
+  
+  /* Element symbol styling */
+  .element-symbol {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Chemical formulas and configurations */
+  .formula, .electron-config {
+    font-family: 'JetBrains Mono', Monaco, monospace;
+    font-size: 0.9em;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  
+  /* Small text elegance */
+  .text-sm, .text-xs {
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+}
+
+/* ===========================================
+   ICON GRADIENT SYSTEM - Red to Black
+   ========================================== */
+
+/* Base gradient icon class */
+.icon-gradient {
+  background: var(--icon-gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(220, 38, 38, 0.2));
+  transition: all 0.3s ease;
+}
+
+/* Secondary gradient variant */
+.icon-gradient-secondary {
+  background: var(--icon-gradient-secondary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(239, 68, 68, 0.2));
+  transition: all 0.3s ease;
+}
+
+/* Accent gradient variant */
+.icon-gradient-accent {
+  background: var(--icon-gradient-accent);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(248, 113, 113, 0.2));
+  transition: all 0.3s ease;
+}
+
+/* Hover effects for gradient icons */
+.icon-gradient:hover,
+.icon-gradient-secondary:hover,
+.icon-gradient-accent:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(220, 38, 38, 0.3));
+}
+
+/* Specific icon styling with gradients */
+.gradient-brain {
+  background: linear-gradient(135deg, #DC2626 0%, #7F1D1D 30%, #1F2937 70%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(220, 38, 38, 0.25));
+}
+
+.gradient-atom {
+  background: linear-gradient(45deg, #EF4444 0%, #DC2626 25%, #450A0A 60%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(239, 68, 68, 0.25));
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.gradient-sparkles {
+  background: linear-gradient(120deg, #F87171 0%, #EF4444 30%, #7F1D1D 70%, #1F2937 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(248, 113, 113, 0.25));
+  animation: sparkle-glow 2s ease-in-out infinite alternate;
+}
+
+.gradient-trends {
+  background: linear-gradient(90deg, #FCA5A5 0%, #F87171 20%, #EF4444 40%, #DC2626 60%, #7F1D1D 80%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(252, 165, 165, 0.25));
+}
+
+.gradient-zap {
+  background: linear-gradient(135deg, #FECACA 0%, #FCA5A5 15%, #F87171 30%, #EF4444 50%, #DC2626 70%, #7F1D1D 85%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(254, 202, 202, 0.25));
+}
+
+.gradient-award {
+  background: linear-gradient(180deg, #F59E0B 0%, #D97706 20%, #DC2626 40%, #7F1D1D 70%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.25));
+}
+
+.gradient-book {
+  background: linear-gradient(45deg, #3B82F6 0%, #1D4ED8 20%, #DC2626 50%, #7F1D1D 80%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(59, 130, 246, 0.25));
+}
+
+/* Action button icons */
+.gradient-send {
+  background: linear-gradient(135deg, #10B981 0%, #059669 25%, #DC2626 60%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.2));
+}
+
+.gradient-refresh {
+  background: linear-gradient(360deg, #8B5CF6 0%, #7C3AED 30%, #DC2626 70%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(139, 92, 246, 0.2));
+}
+
+.gradient-volume {
+  background: linear-gradient(90deg, #06B6D4 0%, #0891B2 30%, #DC2626 70%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(6, 182, 212, 0.2));
+}
+
+.gradient-image {
+  background: linear-gradient(45deg, #F59E0B 0%, #D97706 25%, #DC2626 60%, #7F1D1D 85%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(245, 158, 11, 0.2));
+}
+
+.gradient-user {
+  background: linear-gradient(135deg, #6366F1 0%, #4F46E5 30%, #DC2626 70%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(99, 102, 241, 0.2));
+}
+
+.gradient-close {
+  background: linear-gradient(45deg, #EF4444 0%, #DC2626 50%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(239, 68, 68, 0.3));
+}
+
+/* Keyframe animations for special effects */
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 2px 6px rgba(239, 68, 68, 0.25));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 4px 12px rgba(239, 68, 68, 0.4));
+    transform: scale(1.05);
+  }
+}
+
+@keyframes sparkle-glow {
+  0% {
+    filter: drop-shadow(0 2px 6px rgba(248, 113, 113, 0.25));
+  }
+  100% {
+    filter: drop-shadow(0 4px 12px rgba(248, 113, 113, 0.5));
+  }
+}
+
+/* Enhanced Dark Mode Styles for Better Readability */
+.dark {
+  /* Enhanced background colors for better contrast */
+  --enhanced-bg: 15 23 42; /* slate-900 */
+  --enhanced-bg-secondary: 30 41 59; /* slate-800 */
+  --enhanced-text: 248 250 252; /* slate-50 */
+  --enhanced-text-secondary: 226 232 240; /* slate-200 */
+  --enhanced-text-muted: 148 163 184; /* slate-400 */
+  --enhanced-border: 51 65 85; /* slate-700 */
+  --enhanced-accent: 59 130 246; /* blue-500 */
+}
+
+/* Dark mode text improvements */
+.dark .text-gray-900 {
+  @apply text-slate-50;
+  font-weight: 300;
+}
+
+.dark .text-gray-800 {
+  @apply text-slate-100;
+  font-weight: 300;
+}
+
+.dark .text-gray-700 {
+  @apply text-slate-200;
+  font-weight: 300;
+}
+
+.dark .text-gray-600 {
+  @apply text-slate-300;
+  font-weight: 300;
+}
+
+.dark .text-gray-500 {
+  @apply text-slate-400;
+  font-weight: 300;
+}
+
+/* Dark mode background improvements */
+.dark .bg-gray-50 {
+  @apply bg-slate-800;
+}
+
+.dark .bg-gray-100 {
+  @apply bg-slate-700;
+}
+
+.dark .bg-gray-200 {
+  @apply bg-slate-600;
+}
+
+/* Dark mode border improvements */
+.dark .border-gray-200 {
+  @apply border-slate-700;
+}
+
+.dark .border-gray-300 {
+  @apply border-slate-600;
+}
+
+/* Enhanced tooltip styles for dark mode */
+.dark .tooltip-dark {
+  background: rgb(15 23 42 / 0.95); /* slate-900 with opacity */
+  border: 2px solid rgb(51 65 85); /* slate-700 */
+  color: rgb(248 250 252); /* slate-50 */
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(51, 65, 85, 0.5);
+  backdrop-filter: blur(16px);
+}
+
+/* Print Styles for Academic Use */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    font-weight: 400;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .element-tile {
+    border: 1px solid #000 !important;
+    background: white !important;
+    color: black !important;
+    break-inside: avoid;
+  }
+  
+  .periodic-table {
+    page-break-inside: avoid;
+  }
+  
+  .lanthanides, .actinides {
+    page-break-before: avoid;
+    margin-top: 1cm;
+  }
+  
+  /* Ensure proper spacing for academic printing */
+  h1, h2, h3 {
+    page-break-after: avoid;
+    font-weight: 700;
+  }
+  
+  p, div {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  /* Remove gradients in print */
+  .icon-gradient,
+  .icon-gradient-secondary,
+  .icon-gradient-accent,
+  .gradient-brain,
+  .gradient-atom,
+  .gradient-sparkles,
+  .gradient-trends,
+  .gradient-zap,
+  .gradient-award,
+  .gradient-book,
+  .gradient-send,
+  .gradient-refresh,
+  .gradient-volume,
+  .gradient-image,
+  .gradient-user,
+  .gradient-close {
+    background: none !important;
+    color: black !important;
+    filter: none !important;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .gradient-atom,
+  .gradient-sparkles {
+    animation: none !important;
+  }
+}
+
+/* High contrast mode for better visibility */
+@media (prefers-contrast: high) {
+  .element-tile {
+    border-width: 2px !important;
+    border-color: #000 !important;
+  }
+  
+  .dark .element-tile {
+    border-color: #fff !important;
+  }
+  
+  /* High contrast icon gradients */
+  .icon-gradient,
+  .icon-gradient-secondary,
+  .icon-gradient-accent {
+    background: linear-gradient(135deg, #000000 0%, #DC2626 50%, #000000 100%) !important;
+  }
+}
+
+/* Academic table styles */
+.academic-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+}
+
+.academic-table th,
+.academic-table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 300;
+}
+
+.dark .academic-table th,
+.dark .academic-table td {
+  border-color: #374151;
+}
+
+.academic-table th {
+  background-color: #f9fafb;
+  font-weight: 500;
+  font-family: 'Playfair Display', serif;
+}
+
+.dark .academic-table th {
+  background-color: #1f2937;
+}
+
+/* Element tile animations for professional feel */
+.element-tile {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+}
+
+.element-tile:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.15);
+}
+
+.dark .element-tile:hover {
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.25);
+}
+
+.element-tile:active {
+  transform: translateY(-1px) scale(1.01);
+  transition-duration: 0.1s;
+}
+
+/* Professional focus styles */
+.element-tile:focus {
+  outline: 2px solid #DC2626;
+  outline-offset: 2px;
+}
+
+/* Chemical formula subscripts and superscripts */
+.chemical-formula sub {
+  font-size: 0.75em;
+  vertical-align: sub;
+  font-weight: 500;
+}
+
+.chemical-formula sup {
+  font-size: 0.75em;
+  vertical-align: super;
+  font-weight: 500;
+}
+
+/* Isotope notation */
+.isotope-notation {
+  position: relative;
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.isotope-notation .mass-number {
+  position: absolute;
+  top: -0.5em;
+  left: -0.7em;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.isotope-notation .atomic-number {
+  position: absolute;
+  bottom: -0.5em;
+  left: -0.7em;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+/* Professional scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #DC2626, #7F1D1D);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #F87171, #EF4444);
+}
+
+/* Grid system for periodic table */
+.grid-cols-15 {
+  grid-template-columns: repeat(15, minmax(0, 1fr));
+}
+
+.grid-cols-18 {
+  grid-template-columns: repeat(18, minmax(0, 1fr));
+}
+
+.grid-cols-19 {
+  grid-template-columns: repeat(19, minmax(0, 1fr));
+}
+
+/* Enhanced contrast for tooltips and panels in dark mode */
+.dark .bg-white {
+  @apply bg-slate-900;
+}
+
+.dark .bg-gray-800 {
+  @apply bg-slate-800;
+}
+
+.dark .bg-gray-900 {
+  @apply bg-slate-900;
+}
+
+/* Improved border contrast in dark mode */
+.dark .border-gray-600 {
+  @apply border-slate-600;
+}
+
+.dark .border-gray-700 {
+  @apply border-slate-700;
+}
+
+/* Better text contrast for status badges */
+.dark .bg-green-100 {
+  @apply bg-green-900;
+}
+
+.dark .text-green-800 {
+  @apply text-green-200;
+}
+
+.dark .bg-red-100 {
+  @apply bg-red-900;
+}
+
+.dark .text-red-800 {
+  @apply text-red-200;
+}
+
+/* Enhanced hover states for dark mode */
+.dark .hover\:bg-gray-50:hover {
+  @apply bg-slate-800;
+}
+
+.dark .hover\:bg-gray-100:hover {
+  @apply bg-slate-700;
+}
+
+.dark .hover\:bg-gray-200:hover {
+  @apply bg-slate-600;
+}
+
+/* Button and interactive element typography */
+button, .btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Form element typography */
+input, textarea, select {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.005em;
+}
+
+/* Label typography */
+label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .element-tile {
+    font-size: 0.7rem;
+    padding: 0.25rem;
+  }
+  
+  .element-symbol {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-cols-18 {
+    grid-template-columns: repeat(18, minmax(20px, 1fr));
+    gap: 1px;
+  }
+  
+  .element-tile {
+    font-size: 0.6rem;
+    padding: 0.125rem;
+    min-height: 30px;
+  }
+  
+  body {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Enhanced typography for larger screens */
+@media (min-width: 1024px) {
+  body {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    letter-spacing: -0.05em;
+  }
+  
+  h2 {
+    font-size: 2.25rem;
+    letter-spacing: -0.04em;
+  }
+  
+  .element-symbol {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  
+  h1 {
+    font-size: 3.5rem;
+    letter-spacing: -0.06em;
+  }
+}

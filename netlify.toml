@@ -1,0 +1,21 @@
+[build]
+  publish = "out"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  GEMINI_API_KEY = ""
+
+[context.deploy-preview.environment]
+  GEMINI_API_KEY = ""
+
+[context.branch-deploy.environment]
+  GEMINI_API_KEY = ""
