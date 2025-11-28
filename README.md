@@ -178,7 +178,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **[⭐ Star this repository](https://github.com/HeyBatlle1/hayhuntdb)** | **[🚀 Try Live Demo](https://your-domain.com)** | **[📖 Read Documentation](https://github.com/HeyBatlle1/hayhuntdb/wiki)**
 
-*Made with* ❤️ *using* **[Bolt.New](https://bolt.new)** *and* **Google Gemini AI**
 
 </div>
 
