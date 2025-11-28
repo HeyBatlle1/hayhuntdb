@@ -2,7 +2,7 @@
 
 **Powered by [HayHuntDB.Online](https://hayhuntdb.online) - Advanced Chemical Database Solutions**
 
-[![Built with Bolt](https://img.shields.io/badge/Built%20with-Bolt.New-FF6154?style=for-the-badge&logo=bolt&logoColor=white)](https://bolt.new)
+
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
